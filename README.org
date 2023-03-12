@@ -2,7 +2,9 @@
 
 * jpt-apl-mode
 
-[["apl-mode.png"]]
+#+CAPTION: Screenshot
+#+ATTR_HTMl: :width 600px 
+[[./apl-mode.png]]
 
 
 This code gives a APL interface to Emacs for april - a common lisp embedded APL language
@@ -23,6 +25,18 @@ header character.
 With straight and use-package installed:
 
 (use-package jpt-apl-mode
-      :straight (jpt-apl-mode :type git :host github :repo "jpthing/apl-mode))
+      :straight (jpt-apl-mode :type git :host github :repo
+      "jpthing/apl-mode))
+
+* Customization
+
+Setting jpt-apl-use-header to nil will disable the header line with the
+APL symbols. The Key-cords  will still work.
+There is also a variable jpt-apl-exclude.
+The (local) variable jpt-apl-data contains information on all apl
+operators in Dyalog and gnu APL. It then filters out the ones that can
+be typed on the keyboard (:ascii) and the ones that Dyalog (:dyalog) uses, but
+april does not. To make a header that looks like the one in
+tryapl.org you could change it to '(:gnu) .
 
 #  LocalWords:  apl jpt
