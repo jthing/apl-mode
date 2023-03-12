@@ -1,0 +1,17 @@
+* jpt-apl-mode
+
+
+This code gives a APL interface to Emacs for april - a common lisp embedded APL language
+See: https://github.com/phantomics/april
+The interface inspired by https://tryapl.org as I was not that happy with the gnu-apl-mode
+interface. The unicode characters of APL are entered with two key strokes and a tab - called a cord.
+They are a mnemonic where the keys when combined look simular to what the unicode chacter looks like.
+I find that makes them more intuitive and easy to remember.
+Examples:
+  aa<tab> → ⍺,  xx<tab> → ×, 0~<tab> → ⍬, <><tab> → ◊
+There is a optional header which displays the APL characters. When you click them they are entered in the code
+at the cursor position. When you hover over them a popup is displayed. I contains: the operator, the monadic and
+dyadic meaning and the key cord. You can enter the key cord from the keyboard if you don't want to mouse-click the
+header character.
+
+#  LocalWords:  apl jpt
