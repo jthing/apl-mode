@@ -1,4 +1,8 @@
+#+STARTUP: inlineimages
+
 * jpt-apl-mode
+
+[["apl-mode.png"]]
 
 
 This code gives a APL interface to Emacs for april - a common lisp embedded APL language
@@ -13,5 +17,12 @@ There is a optional header which displays the APL characters. When you click the
 at the cursor position. When you hover over them a popup is displayed. I contains: the operator, the monadic and
 dyadic meaning and the key cord. You can enter the key cord from the keyboard if you don't want to mouse-click the
 header character.
+
+* Setup
+
+With straight and use-package installed:
+
+(use-package jpt-apl-mode
+      :straight (jpt-apl-mode :type git :host github :repo "jpthing/apl-mode))
 
 #  LocalWords:  apl jpt
