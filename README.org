@@ -26,7 +26,7 @@ With straight and use-package installed:
 
 (use-package jpt-apl-mode
       :straight (jpt-apl-mode :type git :host github :repo
-      "jpthing/apl-mode))
+      "jthing/apl-mode"))
 
 * Customization
 
