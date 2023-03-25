@@ -74,7 +74,7 @@
      (?⍳ "indices/indices of" ?i ?i) (?⍸ "where/where index" ?i ?_) (?∊ "enlist/member of" ?e ?e) (?⍷ "find" ?e ?_)
      (?∪ "unique/union" ?u ?u) (?∩ "intersection" ?n ?n) (?~ "not/without")
      (?/ "replicate/reduce") (?\\ "expand/scan")
-     (?⌿ "replicate first/reduce first" ?/ ?-) (?⍀ "expand first/scan first" ?\ ?-)
+     (?⌿ "replicate first/reduce first" ?/ ?-) (?⍀ "expand first/scan first" ?\\ ?-)
      (?, "ravel/catinate/laminate") (?⍪ "table/catenate first" ?, ?-) (?⍴ "shape/reshape" ?p ?p) (?⌽ "reverse/rotate" ?O ?|)
      (?⊖ "reverse first/rotate first" ?O ?-) (?⍉ "transpose/reorder axis" ?O ?\\)
      (?¨ "each" ?: ?:) (?⍨ "constant/self/swap" ?~ ?:) (?⍣ "repeat" ?* ?:) (?. "outer product (.∘)/inner product")
