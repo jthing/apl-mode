@@ -178,13 +178,12 @@ APL character. The kestroke can always be entered instead of clicking the key."
 (defun jpt-apl-maybe-header ()
   "When jpt-apl-use-header is set display header.
 Toggle it on/off in sync with the enable/disable cycle of the mode"
-  (if jpt-apl-mode
-      (progn
-	(setq-local jpt-apl-insert-header t)
-	(jpt-apl-insert-header))
-    (setq-local jpt-apl-using-header nil)
-    (jpt-apl-remove-header)))
-
+      (if (jpt-apl-use-header)
+	  (progn
+	    (setq-local jpt-apl-insert-header t)
+	    (jpt-apl-insert-header))
+	(setq-local jpt-apl-use-header nil)
+	(jpt-apl-remove-header)))
 ;;
 ;; Convert jpt-apl-data to keymap
 ;; Returns:
