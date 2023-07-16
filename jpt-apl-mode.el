@@ -125,6 +125,9 @@ For beginners it is probaly better to leave it at nil"
 (defvar-local jpt-apl-used-data
     "jtp-apl-data, but filtered to remove entries spesified by jpt-apl-exclude.")
 
+(defvar-local jpt-apl-insert-header t
+  "Used in jpt-apl-maybe-header to toggle apl header bar on and off")
+
 (defun get-code (data) (car data))
 
 (defun get-help-string (data)
@@ -178,11 +181,11 @@ APL character. The kestroke can always be entered instead of clicking the key."
 (defun jpt-apl-maybe-header ()
   "When jpt-apl-use-header is set display header.
 Toggle it on/off in sync with the enable/disable cycle of the mode"
-      (if (jpt-apl-use-header)
-	  (progn
+      (if jpt-apl-insert-header
+	  (if jpt-apl-use-header
 	    (setq-local jpt-apl-insert-header t)
 	    (jpt-apl-insert-header))
-	(setq-local jpt-apl-use-header nil)
+	(setq-local jpt-apl-insert-header nil)
 	(jpt-apl-remove-header)))
 ;;
 ;; Convert jpt-apl-data to keymap
