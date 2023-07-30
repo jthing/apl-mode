@@ -54,7 +54,7 @@
 (defvar-local jpt-apl-exclude-plist
     (list
      :ascii  '(?+ ?- ?! ?\? ?= ?~ ?| ?/ ?\\ ?, ?. ?@ ?&)
-     :dyalog '(?≡ ?≢ ?⍞ ?⌶ ?&)
+     :dyalog '(?⍞ ?⌶ ?&)
      :gnu    '(?⍹ ?⍶)))
 
 (make-variable-buffer-local
@@ -181,12 +181,13 @@ APL character. The kestroke can always be entered instead of clicking the key."
 (defun jpt-apl-maybe-header ()
   "When jpt-apl-use-header is set display header.
 Toggle it on/off in sync with the enable/disable cycle of the mode"
-      (if jpt-apl-insert-header
-	  (if jpt-apl-use-header
-	    (setq-local jpt-apl-insert-header t)
-	    (jpt-apl-insert-header))
-	(setq-local jpt-apl-insert-header nil)
-	(jpt-apl-remove-header)))
+  (when jpt-apl-use-header
+    (if jpt-apl-insert-header
+	(progn
+	  (jpt-apl-insert-header)
+	  (setq-local jpt-apl-insert-header nil))
+      (jpt-apl-remove-header)
+      (setq-local jpt-apl-insert-header nil))))
 ;;
 ;; Convert jpt-apl-data to keymap
 ;; Returns:
